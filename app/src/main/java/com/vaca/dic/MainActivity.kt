@@ -6,8 +6,6 @@ import android.util.Log
 import java.io.InputStream
 
 
-#pragma mode( separator(.,;) integer(h32) )
-
 
 
 
