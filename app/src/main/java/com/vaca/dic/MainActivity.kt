@@ -17,8 +17,23 @@ class MainActivity : AppCompatActivity() {
         dictionaryStream.read(dicByteArray)
 
         var fuck=dicByteArray.copyOfRange(200,222)
-        val x=String(fuck,UTF_16LE)
+        val x=String(byteArrayOf(78.toByte(),103.toByte()),UTF_16LE)
         Log.e("fuck","$x")
+        sea(x)
+    }
+
+
+    fun sea(st:String):Int{
+        val s=st.toLowerCase()
+        if(s=="z"){
+            return -1
+        }
+        val di=s.toByteArray(UTF_16LE)
+        for(k in di){
+            Log.e("fuckfuck",k.toUByte().toInt().toString())
+        }
+        return 0
+
     }
 
 
