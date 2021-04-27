@@ -51,6 +51,9 @@ object DicTool {
         if (s == "z") {
             return -1
         }
+        if(s.isEmpty()){
+            return -1
+        }
 
         val di = transfer16(s.toByteArray(StandardCharsets.UTF_16LE))
         val diLen = di.size

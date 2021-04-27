@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
 
         //--------------------------------------------------------读取文本， 这个是小的在前面的
-//        DicTool.dicToolInit(this)
+        DicTool.dicToolInit(this)
 //
 //
 //        val x=DicTool.searchString2Index("apple")
