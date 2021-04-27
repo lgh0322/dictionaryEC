@@ -51,5 +51,5 @@ dependencies {
 
 
     implementation "com.tencent.bugly:crashreport:3.3.92"
-
+    implementation "com.daimajia.swipelayout:library:1.2.0@aar"
 }

@@ -9,6 +9,10 @@
             android:icon="@drawable/ic_baseline_search_24"
             android:title="查单词" />
         <item
+            android:id="@+id/searchListFragment"
+            android:icon="@drawable/ic_baseline_search_24"
+            android:title="列表查询" />
+        <item
             android:id="@+id/starFragment"
             android:icon="@drawable/ic_baseline_star_24"
             android:title="我的收藏" />

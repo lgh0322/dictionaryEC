@@ -21,4 +21,8 @@
         android:name="com.vaca.dic.fragment.AboutFragment"
         android:label="关于"
         tools:layout="@layout/fragment_about"/>
+    <fragment
+        android:id="@+id/searchListFragment"
+        android:name="com.vaca.dic.fragment.SearchListFragment"
+        android:label="列表查询" />
 </navigation>

@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.searchFragment,
+                R.id.searchListFragment,
                 R.id.starFragment,
                 R.id.aboutFragment
             ), drawerLayout
