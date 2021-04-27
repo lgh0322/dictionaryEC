@@ -8,12 +8,7 @@ import java.nio.charset.StandardCharsets.UTF_16LE
 
 
 class MainActivity : AppCompatActivity() {
-    lateinit var dicByteArray: ByteArray
-    lateinit var inputWord: ByteArray
 
-    enum class JudgeSet{
-        MeetSmaller,MeetGreater,MeetPrefix,MeetEqual
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,19 +19,22 @@ class MainActivity : AppCompatActivity() {
         dicByteArray = ByteArray(size)
         dictionaryStream.read(dicByteArray)
 
-
-
-
-//        var fuck = dicByteArray.copyOfRange(200, 222)
-//        val x = String(byteArrayOf(78.toByte(), 103.toByte()), UTF_16LE)
-//        Log.e("fuck", "$x")
-        val x=sea("apple")
+        val x=searchString2Index("apple")
         Log.e("fuck", "$x")
 
     }
 
+
+
+    lateinit var dicByteArray: ByteArray
+    lateinit var inputWord: ByteArray
+
+    enum class JudgeSet{
+        MeetSmaller,MeetGreater,MeetPrefix,MeetEqual
+    }
+
     //---------------------------------------------二分法寻找位置的
-    private fun sea(st: String): Int {
+    private fun searchString2Index(st: String): Int {
         val s = st.toLowerCase()  //---------------------先转化成小写
         if (s == "z") {
             return -1
