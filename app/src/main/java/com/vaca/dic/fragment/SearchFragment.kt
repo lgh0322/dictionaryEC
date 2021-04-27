@@ -21,6 +21,9 @@ class SearchFragment : Fragment() {
 
         binding= FragmentSearchBinding.inflate(inflater,container,false)
 
+
+
+
         return binding.root
     }
 
