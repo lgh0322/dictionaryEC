@@ -62,7 +62,13 @@ class SearchFragment : Fragment() {
         explain.observe(viewLifecycleOwner,{
             val x= DicTool.searchString2Index(it)
             val y=DicTool.getExplain(x)
-            binding.explain.text=y
+            val z=y.head
+            if(z==it){
+                binding.explain.text=y.body
+            }else{
+                binding.explain.text=""
+            }
+
         })
 
 

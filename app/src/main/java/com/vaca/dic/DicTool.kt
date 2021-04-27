@@ -1,6 +1,7 @@
 package com.vaca.dic
 
 import android.content.Context
+import com.vaca.dic.bean.SearchResult
 import java.io.InputStream
 import java.nio.charset.StandardCharsets
 
@@ -31,13 +32,16 @@ object DicTool {
 
 
 
-    fun getExplain(index:Int):String{
+    fun getExplain(index:Int):SearchResult{
         if(index==-1){
-            return ""
+            return SearchResult("","")
         }
         val head=index+1
+        val explainHead= findBody(head)
         val tail= findTail(head)
-        return String(dicByteArray.copyOfRange(head*2,tail*2),StandardCharsets.UTF_16LE)
+        val headString=String(dicByteArray.copyOfRange(head*2,explainHead*2),StandardCharsets.UTF_16LE)
+        val body= String(dicByteArray.copyOfRange(explainHead*2,tail*2),StandardCharsets.UTF_16LE)
+        return SearchResult(headString,body)
     }
 
 
@@ -142,6 +146,18 @@ object DicTool {
         return currentEye
     }
 
+    //-----------------------------------------------找到单词的中部
+    private fun findBody(dicIndex: Int): Int {
+        var currentEye = dicIndex
+        var firstByte = 0
+        var secondByte = 0
+        do {
+            currentEye++
+            firstByte = dicByteArray[currentEye * 2].toUByte().toInt()
+            secondByte = dicByteArray[currentEye * 2 + 1].toUByte().toInt()
+        } while (!((firstByte == 9) && (secondByte == 0)))
+        return currentEye
+    }
 
 
     //----------------------------------------------比较输入的单词与词典中指定的位置是否相等
