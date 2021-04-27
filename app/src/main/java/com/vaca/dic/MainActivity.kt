@@ -20,6 +20,10 @@ class MainActivity : AppCompatActivity() {
         val x=String(byteArrayOf(78.toByte(),103.toByte()),UTF_16LE)
         Log.e("fuck","$x")
         sea(x)
+
+
+       
+
     }
 
 
