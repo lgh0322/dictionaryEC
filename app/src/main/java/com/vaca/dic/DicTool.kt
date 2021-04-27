@@ -30,6 +30,9 @@ object DicTool {
     }
 
 
+    enum class StillState{
+        NotStill,StillLow,StillHigh
+    }
 
 
     fun getExplain(index:Int):SearchResult{
@@ -60,7 +63,7 @@ object DicTool {
         }
 
         val di = transfer16(s.toByteArray(StandardCharsets.UTF_16LE))
-        val diLen = di.size
+
         inputWord = di
 
         //判断是否是第一个
@@ -83,7 +86,7 @@ object DicTool {
         var imin = 0
         var currentEye=0
 
-        var stillFlag=false
+        var stillFlag:StillState=StillState.NotStill
         //---------------------------------------开始进行二分法操作
         do {
             currentEye = (imax + imin) / 2
@@ -95,24 +98,39 @@ object DicTool {
                 }
 
                 JudgeSet.MeetSmaller->{
-                    stillFlag=(imin==currentHead)
+                   if(imin==currentHead){
+                       stillFlag=StillState.StillLow
+                    }
                     imin=currentHead
                 }
 
                 JudgeSet.MeetGreater->{
-                    stillFlag=(imax==currentHead)
+                    if(imax==currentHead){
+                        stillFlag=StillState.StillHigh
+                    }
                     imax=currentHead
                 }
 
                 JudgeSet.MeetPrefix->{
-                    stillFlag=(imax==currentHead)
+                    if(imax==currentHead){
+                        stillFlag=StillState.StillHigh
+                    }
                     imax=currentHead
                 }
             }
-            if(stillFlag){
-                stillFlag=false
-                imax=findHead(imax-1)
+
+
+            when(stillFlag){
+                StillState.StillLow->{
+                    imin= findTail(imin+1)
+                }
+                StillState.StillHigh->{
+                    imax=findHead(imax-1)
+                }
             }
+
+            stillFlag=StillState.NotStill
+
         } while (imax!=imin)
 
 
