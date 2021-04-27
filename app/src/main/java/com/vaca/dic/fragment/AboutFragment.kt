@@ -7,19 +7,19 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.vaca.dic.R
-import com.vaca.dic.databinding.FragmentSearchBinding
+import com.vaca.dic.databinding.FragmentAboutBinding
 
 
-class SearchFragment : Fragment() {
+class AboutFragment : Fragment() {
 
-    private lateinit var binding:FragmentSearchBinding
+    lateinit var binding:FragmentAboutBinding
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
-        binding= FragmentSearchBinding.inflate(inflater,container,false)
+        binding= FragmentAboutBinding.inflate(inflater,container,false)
 
         return binding.root
     }

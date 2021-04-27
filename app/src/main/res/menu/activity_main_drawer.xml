@@ -6,11 +6,15 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/searchFragment"
-            android:icon="@null"
+            android:icon="@drawable/ic_baseline_search_24"
             android:title="查单词" />
         <item
             android:id="@+id/starFragment"
-            android:icon="@null"
-            android:title="查单词" />
+            android:icon="@drawable/ic_baseline_star_24"
+            android:title="我的收藏" />
+        <item
+            android:id="@+id/aboutFragment"
+            android:icon="@drawable/ic_baseline_emoji_people_24"
+            android:title="关于" />
     </group>
 </menu>

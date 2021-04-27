@@ -7,20 +7,21 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.vaca.dic.R
+import com.vaca.dic.databinding.FragmentStarBinding
 
 
 class StarFragment : Fragment() {
 
+    private lateinit var binding:FragmentStarBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        val root = inflater.inflate(R.layout.fragment_star, container, false)
+       binding= FragmentStarBinding.inflate(inflater,container,false)
 
-
-        return root
+        return binding.root
     }
 
 

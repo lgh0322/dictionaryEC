@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity() {
             setOf(
                 R.id.searchFragment,
                 R.id.starFragment,
+                R.id.aboutFragment
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
