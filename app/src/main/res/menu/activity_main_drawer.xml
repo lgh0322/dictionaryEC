@@ -8,7 +8,9 @@
             android:id="@+id/searchFragment"
             android:icon="@null"
             android:title="查单词" />
-
-
+        <item
+            android:id="@+id/starFragment"
+            android:icon="@null"
+            android:title="查单词" />
     </group>
 </menu>

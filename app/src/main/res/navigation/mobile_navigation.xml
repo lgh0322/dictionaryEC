@@ -9,5 +9,11 @@
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.vaca.dic.fragment.SearchFragment"
-        android:label="SearchFragment" />
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search"/>
+    <fragment
+        android:id="@+id/starFragment"
+        android:name="com.vaca.dic.fragment.StarFragment"
+        android:label="StarFragment"
+        tools:layout="@layout/fragment_star"/>
 </navigation>

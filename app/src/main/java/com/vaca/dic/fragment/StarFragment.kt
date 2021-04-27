@@ -9,7 +9,7 @@ import androidx.fragment.app.viewModels
 import com.vaca.dic.R
 
 
-class SearchFragment : Fragment() {
+class StarFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -17,7 +17,7 @@ class SearchFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val root = inflater.inflate(R.layout.fragment_search, container, false)
+        val root = inflater.inflate(R.layout.fragment_star, container, false)
 
 
         return root

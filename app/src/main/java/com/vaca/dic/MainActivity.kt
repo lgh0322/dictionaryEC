@@ -25,35 +25,38 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        initDrawer()
+
+
+        //--------------------------------------------------------读取文本， 这个是小的在前面的
+//        DicTool.dicToolInit(this)
+//
+//
+//        val x=DicTool.searchString2Index("apple")
+//        val y=DicTool.getExplain(x)
+//        Log.e("fuck", y)
+
+
+
+    }
+
+
+    private fun initDrawer(){
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-       appBarConfiguration = AppBarConfiguration(
+        appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.searchFragment,
+                R.id.starFragment,
             ), drawerLayout
         )
-       val  mMainNavFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment)!!
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-
-        //--------------------------------------------------------读取文本， 这个是小的在前面的
-        DicTool.dicToolInit(this)
-
-
-        val x=DicTool.searchString2Index("apple")
-        val y=DicTool.getExplain(x)
-        Log.e("fuck", y)
-
-
-
     }
-
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
