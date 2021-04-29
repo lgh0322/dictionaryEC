@@ -77,7 +77,7 @@ class SearchListFragment : Fragment() {
     }
 
 
-    fun closeSoftKeyboard(mEditText: EditText) {
+    private fun closeSoftKeyboard(mEditText: EditText) {
         val imm = requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(mEditText.windowToken, 0)
     }
